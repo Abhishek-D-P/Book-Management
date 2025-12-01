@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="table">
+        <div class="heading">
+            <div class="tableName">Book ID</div>
+            <div class="tableName">Book Name</div>
+            <div class="tableName">Publisher</div>
+            <div class="tableName">Status</div>
+            <div class="tableName">Pub. Year</div>
+            <a href="/add">Add</a>
+        </div>
+        {% for book in book_list %}
+        <div class="row">
+            
+            <div class="row-item">{{ loop.index }}</div>
+            <div class="row-item">{{ book["bookName"] }}</div>
+            <div class="row-item">{{ book["publisher"] }}</div>
+            <div class="row-item">{{ book["status"] }}</div>
+            <div class="row-item">{{ book["pubYear"] }}</div>
+            <div class="row-item">
+            <form action="delete/{{ book.bookId }}" class="row-btn" method="post">
+                <input type="submit" value="delete">
+            </form>
+            <form action="update/{{ book.bookId }}" class="row-btn" method="get">
+                <input type="submit" value="update">
+            </form>
+            
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</body>
+</html>

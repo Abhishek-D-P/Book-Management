@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Update Book Details here</h1>
+        <form action="/update" method="post">
+            <input type="text" name="bookId" value="{{ book['bookId'] }}">
+            <input type="text" name="bookName" value="{{ book['bookName'] }}">
+            <input type="text" name="publisher" value="{{ book['publisher'] }}">
+            <input type="text" name="status" value="{{ book['status'] }}">
+            <input type="text" name="pubYear" value="{{ book['pubYear'] }}">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+</body>
+</html>

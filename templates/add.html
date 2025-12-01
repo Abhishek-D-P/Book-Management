@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Add Book here</h1>
+        <form action="/add" method="post">
+            <input type="text" name="bookName" id="" placeholder="Book Name">
+            <input type="text" name="publisher" id="" placeholder="Publisher">
+            <input type="text" name="status" id="" placeholder="Status">
+            <input type="text" name="pubYear" id="" placeholder="Publication Year">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
